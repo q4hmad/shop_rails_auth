@@ -8,11 +8,12 @@
       </div>
     </div>
     <div class="row">
-    <div class="form-group col-md-4">
-      <%= f.label :username %><br />
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-    <% end %>
+      <div class="form-group col-md-4">
+        <%= f.label :username %><br />
+        <%= f.text_field :username, autofocus: true, class: "form-control" %>
+      </div>
+    </div>
+    
     <div class="row">
       <div class="form-group col-md-4">
         <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />

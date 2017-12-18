@@ -12,16 +12,19 @@
     </thead>
     <tbody>
       <% @products.each do |product| %>
+        <% if product.user.present? %>
         <tr>
          <td class="col-md-2"><%= product.name %></td>
          <td class="col-md-2">$<%= product.price %></td>
          <td class="col-md-2"><%= product.user.try(:email) %></td>
          <td class="col-md-4">
+
             <%= link_to 'Show', product_path(product), class: "btn btn-info" %>
             <%= link_to 'Edit', edit_product_path(product), class: "btn  btn-warning" %>
             <%= link_to 'Destroy', product_path(product), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
          </td>
-     </tr>
+       </tr>
+       <% end %>
       <% end %>
     </tbody>
   </table>

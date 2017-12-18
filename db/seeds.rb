@@ -11,7 +11,7 @@ user2 = User.create(username: 'Bruce',
 								    password: 'password1234',
 								    password_confirmation: 'password1234')
 user2.add_role(:client)
-1.upto(5) do |i|
+1.upto() do |i|
 	Product.create(name: "monitor #{i}",
 								 price: 600 * i,
 								 user: user1)
